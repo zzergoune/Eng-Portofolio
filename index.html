@@ -99,7 +99,7 @@
 			<!-- Contact -->
 			<article id="contact">
 				<h2 class="major">Contact me</h2>
-				<form method="post" action="assets/ph/swiftmailer_form.php" id="contact-form">
+				<form method="post" action="#">
 					<div class="fields">
 						<div class="field half">
 							<label for="name">Name</label>
@@ -397,46 +397,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script src="assets/js/validate.js"></script>
-
-	<script>
-		const constraints = {
-			name: {
-				presence: { allowEmpty: false }
-			},
-			email: {
-				presence: { allowEmpty: false },
-				email: true
-			},
-			message: {
-				presence: { allowEmpty: false }
-			}
-		};
-
-		const form = document.getElementById('contact-form');
-
-		form.addEventListener('submit', function (event) {
-			const formValues = {
-				name: form.elements.name.value,
-				email: form.elements.email.value,
-				message: form.elements.message.value
-			};
-
-			const errors = validate(formValues, constraints);
-
-			if (errors) {
-				event.preventDefault();
-				const errorMessage = Object
-					.values(errors)
-					.map(function (fieldValues) {
-						return fieldValues.join(', ')
-					})
-					.join("\n");
-
-				alert(errorMessage);
-			}
-		}, false);
-	</script>
 
 </body>
 
